@@ -1,0 +1,6 @@
+.parking-lot-manager {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;
+    margin-bottom: 20px;
+}

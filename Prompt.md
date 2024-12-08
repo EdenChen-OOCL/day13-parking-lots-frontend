@@ -141,3 +141,33 @@ the car parking and retrieval process, while also keeping track of the current u
             "plateNumber": "AB-9999"
             }
 
+第二次迭代：
+要求：
+1. 实现车牌输入框，停车类型选择下拉菜单，Park按钮和Fetch按钮。
+
+具体实现：
+1. Create a ParkingLotManager Component(.jsx)
+    1) context:
+       1. useContext(ParkingLotContext)
+    2) props:
+       1. none
+    3) variables:
+       1. plateNumber: useState("")
+       2. parkingType: useState("FIRST_PARKING_LOT")
+    4) method:
+       1. changePlateNumber(event): set the plateNumber to the event.target.value.
+       2. changeParkingType(event): set the parkingType to the event.target.value.
+       3. parkCar(): call the parkCar method of the ParkingAPI with the plateNumber and parkingType.
+       4. fetchCar(): call the fetchCar method of the ParkingAPI with the ticket. ticket is like: {
+          "plateNumber": "AB-9999",
+          "position": null,
+          "parkingLot": null
+          }
+    5) html and CSS:
+       1. display the plateNumber input box, with a placeholder "Plate Number".
+       2. display the parkingType select box, with options "Standard", "Smart" and "SuperSmart". These options refer to value, include "FIRST_PARKING_LOT"|"SMART_PARKING_LOT"|"MAX_AVAILABLE_RATE_PARKING_LOT".
+       3. display the Park button, with a click event to call the parkCar method.
+       4. display the Fetch button, with a click event to call the fetchCar method.
+2. update parkingLotReducer to handle the PARK_CAR and FETCH_CAR action. 
+   When PARK_CAR action is dispatched, update the parkingLotState with the new car position.
+   When FETCH_CAR action is dispatched, update the parkingLotState with the new car position.

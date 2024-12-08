@@ -19,7 +19,7 @@ export const fetchParkingLotState = async () => {
 };
 
 export const parkCar = async (plateNumber, parkingType) => {
-    const response = await axiosInstance.post(`/parking-car?parkingStrategyEnum=${parkingType}`, {
+    const response = await axiosInstance.post(`/parking-car?parkingStrategyEnum=${parkingType? parkingType: 'FIRST_PARKING_LOT'}`, {
         plateNumber,
     });
     return response.data;
