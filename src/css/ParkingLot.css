@@ -1,0 +1,4 @@
+.parking-lot {
+    display: flex;
+    justify-content: space-around;
+}
