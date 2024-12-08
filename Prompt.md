@@ -171,3 +171,11 @@ the car parking and retrieval process, while also keeping track of the current u
 2. update parkingLotReducer to handle the PARK_CAR and FETCH_CAR action. 
    When PARK_CAR action is dispatched, update the parkingLotState with the new car position.
    When FETCH_CAR action is dispatched, update the parkingLotState with the new car position.
+
+第三次迭代：
+要求：
+1. 实现全局异常处理，处理NoAvailablePositionException，UnrecognizedTicketException，InvalidLicensePlateException，Exception。
+
+具体实现：
+1. 把所有的axios请求都放在try-catch块中，当请求失败时，弹出一个alert框，显示请求失败的原因。
+2. 当请求失败时，弹出alert框的内容是根据response.data.body来显示的。并且切断该请求后续的解析处理。
